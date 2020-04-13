@@ -1,0 +1,90 @@
+#coding:gbk
+"""
+程序目标：通过调用函数实现RPSLS游戏
+作者：迟焕龙
+日期：2020/04/07
+"""
+# 0 - 石头
+# 1 - 史波克 
+# 2 - 纸
+# 3 - 蜥蜴
+# 4 - 剪刀
+#剪刀裁剪纸；纸包裹石头；石头砸碎剪刀；石头砸死蜥蜴；蜥蜴毒死史波克；史波克打碎剪刀；剪刀腰斩蜥蜴；蜥蜴吃掉布；纸反驳史波克；史波克蒸发石头
+import random
+computer_guess=random.randint(0,4)#产生随机数
+num=computer_guess#赋值
+def RPSLS(a,b):#自定义函数
+	while a==1:
+		print("计算机的选择为：史波克")
+		if b=="蜥蜴":
+			print("您赢了！")
+		if b=="纸":
+			print("您赢了！")
+		if b=="史波克":
+			print("平局")
+		if b=="剪刀":
+			print("机器赢了")
+		if b=="石头":
+			print("机器赢了!")
+		break
+	while a==0:
+		print("计算机的选择为：石头")
+		if b=="纸":
+			print("您赢了")
+		if b=="史波克":
+			print("您赢了！")
+		if b=="剪刀":
+			print("机器赢了！")
+		if b=="蜥蜴":
+			print("机器赢了！")
+		if b=="石头":
+			print("平局")
+		break
+	while a==2:
+		print("计算机的选择为：纸")
+		if b=="剪刀":
+			print("您赢了!")
+		if b=="蜥蜴":
+			print("您赢了!")
+		if b=="史波克":
+			print("机器赢了！")
+		if b=="石头":
+			print("机器赢了！")
+		if b=="纸":
+			print("平局")
+		break
+	while a==3:
+		print("计算机的选择为：蜥蜴")
+		if b=="石头":
+			print("您赢了！")
+		if b=="剪刀":
+			print("您赢了！")
+		if b=="蜥蜴":
+			print("平局")
+		if b=="纸":
+			print("机器赢了")
+		if b=="史波克":
+			print("机器赢了！")
+		break
+	while a==4:
+		print("计算机的选择为：剪刀")
+		if b=="史波克":
+			print("您赢了！")
+		if b=="石头":
+			print("您赢了！")
+		if b=="剪刀":
+			print("平局")
+		if b=="布":
+			print("机器赢了！")
+		if b=="蜥蜴":
+			print("机器赢了！")
+		break				
+print("请输入您的选择:")
+guess=str(input())
+name=set(['石头','剪刀','布','蜥蜴','史波克'])
+print("--------")
+if guess not in name:#验证
+	print("Error: No Correct Name.")
+if guess in name:#调用函数
+	compare=RPSLS(num,guess)
+
